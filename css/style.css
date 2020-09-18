@@ -1,0 +1,587 @@
+@charset "UTF-8";
+
+/* 共通部分 */
+html {
+    font-size: 100%;
+}
+body{
+    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+    line-height: 1.7;
+    color: #432;
+    background-color: rgb(220, 240, 243);
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+
+.wrapper {
+    display: flex;
+    max-width: 20px 20px;
+    margin: 40px;
+    margin-top: 20px;
+    padding: 0%;
+}
+
+/* INDEX */
+
+article {
+    width: 70%;
+	display: flex;
+	margin-bottom: 20px;
+    padding: auto;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+.index_figure {
+	margin-right: 20px;
+	width: 100px;
+	height: 100px;
+}
+
+.index_figure img {
+	min-width: 100px;
+	max-width: 100%;
+	vertical-align: top;
+}
+
+.index_box {
+    padding: 0.5em 1em;
+    margin: 2em 2em;
+    margin-bottom: 0px;
+    margin-right: 0em;
+    color: #2c2c2f;
+    background: #ffffff;/*背景色*/
+}
+
+.index_content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.index_top{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.index_title{
+    color:  #2c2c2f;
+    font-size: 20px;
+    border-bottom: solid 3px #cce4ff;
+    position: relative;
+    padding: 4px;
+}
+
+.index_title:after {
+    position: absolute;
+    content: " ";
+    display: block;
+    border-bottom: solid 3px #54a1cd;
+    bottom: -3px;
+    width: 20%;
+}
+
+.index_title:hover{
+    color: gray;
+}
+
+.index_date{
+    text-align: right;
+    font-size: 12px;
+}
+
+.index_text{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.ss_box {
+    padding: 0.5em 1em;
+    margin: 0.5em 2em;
+    margin-top:0px;
+    margin-bottom: 0px;
+    margin-right: 0em;
+    color: #2c2c2f;
+    background: #ffffff;/*背景色*/
+}
+
+.ss_p{
+    width: auto;
+}
+
+/*topic*/
+
+.top_figure {
+	margin-right: 20px;
+	width: 100px;
+	height: 100px;
+}
+
+.top_figure img {
+	min-width: 100px;
+	max-width: 100%;
+	vertical-align: top;
+}
+
+.top_box {
+    padding: 0.5em 1em;
+    margin: 2em 2em;
+    margin-right: 0em;
+    color: #2c2c2f;
+    background: #ffffff;/*背景色*/
+}
+
+.top_top{
+    display: flex;
+    flex-direction: row;
+}
+
+.top_title{
+    color:  #2c2c2f;
+    font-size: 20px;
+    border-bottom: solid 3px #cce4ff;
+    position: relative;
+    padding: 4px;
+}
+
+.top_title:after {
+    position: absolute;
+    content: " ";
+    display: block;
+    border-bottom: solid 3px #54a1cd;
+    bottom: -3px;
+    width: 20%;
+}
+
+.top_title:hover{
+    color: gray;
+}
+
+.text_date{
+    text-align: right;
+    font-size: 12px;
+}
+
+.top_text{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.edit_text{
+    color:  #2c2c2f;
+    text-align: right;
+    font-size: 12px;
+}
+
+.post_box {
+    padding: 0.5em 1em;
+    margin: 0.5em 2em;
+    margin-right: 0em;
+    color: #2c2c2f;
+    background: #ffffff;/*背景色*/
+}
+
+.post_figure {
+	margin-right: 20px;
+	width: 70px;
+	height: 70px;
+}
+
+.post_figure img {
+	min-width: 70px;
+	max-width: 70%;
+	vertical-align: top;
+}
+
+.top_content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.text_content{
+    display: flex;
+    flex-direction: column;
+    width: 1000%;
+}
+
+.text_p{
+    width: auto;
+}
+
+
+
+/* aside */
+aside {
+    width: 30%;
+    overflow:auto;
+}
+
+aside p {
+    padding:auto;
+    margin:5px;
+}
+
+.sub_box {
+    padding: auto;
+    padding-bottom: 20px;
+    margin-top: 2em;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #54a1cd;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+.sub-menu{
+    color:#432;
+    list-style: none;
+}
+
+.sub-title{
+    position: relative;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+}
+
+.sub-menu li{
+    border-bottom: 1px #ddd solid;
+    padding: 5px;
+    font-size: 13px;
+}
+
+.sub-menu a{
+    color:#432;
+    padding: 10px;
+    display:block;
+}
+.sub-menu a:hover{
+    color:gray;
+}
+
+.sub-button{
+    position: flex;
+    display: block;
+    padding: 0.25em 0.5em;
+    margin:auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #FFF;
+    background: #21b4c7;/*色*/
+    border: solid 1px #1aaab4;/*線色*/
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    text-align: center;
+    }
+    
+.sub-button:active {
+    /*押したとき*/
+    border: solid 1px #03f4f4;
+    box-shadow: none;
+    text-shadow: none;
+    text-align: center;
+}
+
+
+/*text*/
+
+.textarea_box {
+    /* position: flex; */
+    padding: 0.5em 1em;
+    margin: 0.5em 2em;
+    margin-right: 0em;
+    color: #2c2c2f;
+    background: #ffffff;/*背景色*/
+}
+
+.textarea_tt{
+    display: flex;
+    width: 90%;
+}
+
+.textarea_tt textarea[type='text'] {
+    margin: 20px;
+    width: inherit;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    border: 1px solid #1b2538;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    resize: both;
+    box-sizing: border-box;
+}
+
+.textarea_bb{
+    display: flex;
+}
+
+.textarea_bb button{
+    margin-top:20px;
+    margin-left:20px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    padding:10px;
+    text-decoration: none;
+    color: #FFF;
+    background: #21b4c7;/*色*/
+    border: solid 1px #1aaab4;/*線色*/
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+
+.textarea_bb button:active {
+    /*押したとき*/
+    border: solid 1px #03f4f4;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+/*footer*/
+footer{
+    background:#333f4d;
+    text-align: center;
+    padding:2px 0;
+    width: 100%;
+    bottom: 0; /*下に固定*/
+}
+
+footer p{
+    color: #ffffff ;
+    width: 100%;
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+
+/*newpost*/
+
+.new_new{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.newpost_box{
+    display: flex;
+    flex-direction: column;
+    padding: 1em 1em;
+    margin: 0.5em 2em;
+    margin-top: 20px;
+    color: #2c2c2f;
+    background: #ffffff;/*背景色*/
+}
+
+.newpost_top{
+    position: relative;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+}
+
+form{
+    padding:auto;
+}
+
+form dl dt{
+    width: auto;
+    padding:10px 0;
+    float:left;
+    clear:both;
+    box-sizing: border-box;
+}
+
+form dl dd{
+    padding:10px 0;
+}
+.newpost_box input[type='text'] {
+    margin: 20px;
+    width: 500px;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	border: 1px solid #1b2538;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    resize: none;
+    resize: both;
+    box-sizing: border-box;
+}
+
+.newpost_box textarea[type='text'] {
+    margin: 20px;
+    width: 500px;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	border: 1px solid #1b2538;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    resize: none;
+    resize: both;
+    box-sizing: border-box;
+}
+
+.btn{
+    text-align: center;
+}
+
+.newpost_box button{
+    position: flex;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    margin:auto;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #FFF;
+    background: #21b4c7;/*色*/
+    border: solid 1px #1aaab4;/*線色*/
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    }
+    
+.newbbs_box button:active {
+    /*押したとき*/
+    border: solid 1px #03f4f4;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+
+/*delete*/
+
+.delete_title{
+    position: relative;
+    text-align: center;
+}
+
+.delete_text{
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    width: auto;
+    margin-right: 30px;
+    margin-left:  30px;
+}
+
+.delete_sure{
+    position: relative;
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+@media screen and (max-width: 959px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+    .wrapper {
+        display: table;
+        width: 100%;
+        max-width: fit-content;
+        margin: 20px;
+    }
+    article {
+        margin-top:20px;
+        width: 100%;
+    }
+    .text_content{
+        padding: 5px;
+        width: auto;
+    }
+    .top_box {
+        margin: auto;
+        margin-bottom: 5px;
+    }
+    .post_box {
+        margin: auto;
+        max-width:inherit;
+    }
+    .textarea_box {
+        margin: auto;
+        max-width:inherit;
+    }
+    
+    .textarea_box {
+        margin: auto;
+        max-width:inherit;
+    }
+    .textarea_tt {
+        margin: auto;
+    }
+
+    .textarea_tt textarea[type='text'] {
+        margin: 20px;
+        width: inherit;
+    }
+
+    aside {
+        margin-top:20px;
+        width: auto;
+    }
+    .new_new{
+        margin: auto;
+        max-width:500px;
+    }
+}
+
+
+@media screen and (max-width: 650px) {
+    /*新規トピ作成ぺーじ*/
+    .new_new{
+        margin: auto;
+        max-width:inherit;
+    }
+    .newpost_box input[type='text'] {
+        margin: 20px;
+        width: 90%;
+    }
+    
+    .newpost_box textarea[type='text'] {
+        margin: 20px;
+        width: 90%;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    /* 480px以下に適用されるCSS（スマホ用） */
+    .wrapper {
+        display: table;
+        width: 100%;
+    }
+    article {
+        margin-top:20px;
+        margin-right: 3px;
+        margin-left: 3px;
+        width: 100%;
+    }
+    .text_content{
+        width: 100%;
+    }
+    .top_box {
+        margin: auto;
+        margin-bottom: 5px;
+    }
+    .post_box {
+        margin: auto;
+        padding: 0%;
+    }
+    .textarea_box {
+        margin: auto;
+        width: 100%;
+    }
+    .textarea_box textarea[type='text'] {
+        margin:auto;
+        width: 100%;
+    }
+    aside {
+        margin-top:20px;
+        width: 100%;
+    }
+}
