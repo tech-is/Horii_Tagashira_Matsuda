@@ -7,4 +7,20 @@ class Bbs extends CI_Controller {
 	{
 		$this->load->view('index');
 	}
+	public function edit()
+	{
+		$this->load->view('edit');
+	}
+	public function delete()
+	{
+		$this->load->view('delete');
+	}
+	public function newpage()
+	{
+		$this->load->view('newpage');
+	}
+	public function topic()
+	{
+		$this->load->view('topic');
+	}
 }

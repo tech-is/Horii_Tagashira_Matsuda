@@ -9,7 +9,7 @@
     <!-- CSS -->
         <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
         <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
+        <link href="/team2/Horii_Tagashira_Matsuda/css/style.css" rel="stylesheet">
     </head>
 
     <body>
