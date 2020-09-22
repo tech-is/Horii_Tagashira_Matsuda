@@ -32,7 +32,7 @@
                     <div class="a">
                         <div class ="top_top">
                             <figure class="top_figure">
-                                <img src="./img/ic1.jpeg" alt="サムネイル画像">
+                                <img src="/team2/Horii_Tagashira_Matsuda/img/ic1.jpeg" alt="サムネイル画像">
                             </figure>
                             <div class="top_content">
                                 <p class="text_date"><time datetime="2018-08-03">XXXX年XX月XX日</time></p>
@@ -52,7 +52,7 @@
 
                 <div class="article wrapper post_box">
                     <figure class="post_figure">
-                        <img src="./img/ic1.jpeg" alt="サムネイル画像">
+                        <img src="/team2/Horii_Tagashira_Matsuda/img/ic1.jpeg" alt="サムネイル画像">
                     </figure>
                     <div class="text_content">
                         <p class="text_date"><time datetime="">5分前</time></p>
@@ -66,7 +66,7 @@
                 </div>
                 <div class="article wrapper post_box">
                     <figure class="post_figure">
-                        <img src="./img/ic1.jpeg" alt="サムネイル画像">
+                        <img src="/team2/Horii_Tagashira_Matsuda/img/ic1.jpeg" alt="サムネイル画像">
                     </figure>
                     <div class="text_content">
                         <p class="text_date"><time datetime="">2分前</time></p>
