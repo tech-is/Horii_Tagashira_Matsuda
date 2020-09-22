@@ -18,10 +18,10 @@
                 <div class="sub_box">
                 <h3 class="sub-title">けいじばん</h3>
                 <ul class="sub-menu">
-                    <li><a href="#">映画「窮鼠はチーズの夢を見る」は本日公開！観に行くぞ　(20)</a></li>
-                    <li><a href="#">１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０　(30)</a></li>
-                    <li><a href="#">上限30文字（全角）といったところかな</a></li>
-                    <li><a href="#">それはそうとみんな今夜はMADMAXだよ！！ヒャッハ～～～～～！　(198)</a></li>
+                    <li><a href="#">ここにタイトルここにタイトルここにタイトルここにタイトルここにタイトル　(20)</a></li>
+                    <li><a href="#">ここにタイトルここにタイトルここにタイトルここにタイトルここにタイトル　(30)</a></li>
+                    <li><a href="#">ここにタイトルここにタイトルここにタイトルここにタイトルここにタイトル　(55)</a></li>
+                    <li><a href="#">ここにタイトルここにタイトルここにタイトルここにタイトルここにタイトル　(198)</a></li>
                 </ul>
                     <button class="sub-button"type="button">＋　新規作成</button>
                 </div>
@@ -35,14 +35,13 @@
                                 <img src="./img/ic1.jpeg" alt="サムネイル画像">
                             </figure>
                             <div class="top_content">
-                                <p class="text_date"><time datetime="2018-08-03">2018年8月3日</time></p>
+                                <p class="text_date"><time datetime="2018-08-03">XXXX年XX月XX日</time></p>
                                 <h2><a class="top_title" href="#">ここに掲示板のタイトルが入力される件について</a></h2>
                                 <p class="top_name">投稿者：たなかさん</p>
                             </div>
                         </div>
                         <div class="top_text">
-                            <p>1.<br>ここに掲示板の話題とか意見とか相談事なんかをずらずらーーっと書けると良いなぁ。何文字くらいが上限になるのかよくわからないけど、取り敢えず語れるだけ語ってほしい。
-                            これが終わったら私は映画を観に行くので早く終わるぞ。</p>
+                            <p>1.<br>ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容</p>
                         </div>
                         <div class="edit_text">
                             <a href="#">編集</a>
@@ -58,7 +57,7 @@
                     <div class="text_content">
                         <p class="text_date"><time datetime="">5分前</time></p>
                         <p class="top_name">2. たかはしさん</p>
-                        <p class="text_p">あああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+                        <p class="text_p">ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容ここに内容</p>
                         <div class="edit_text">
                             <a href="#">編集</a>
                             <a href="#">削除</a>
@@ -72,7 +71,7 @@
                     <div class="text_content">
                         <p class="text_date"><time datetime="">2分前</time></p>
                         <p class="top_name">3. たなかさん</p>
-                        <p class="text_p">a</p>
+                        <p class="text_p">ここに内容ここに内容ここに内容ここに内容</p>
                         <div class="edit_text">
                             <a href="#">編集</a>
                             <a href="#">削除</a>
