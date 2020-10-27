@@ -17,6 +17,7 @@ class Admin extends CI_Controller {
 			$data['clean_topics'][] = $this->security->xss_clean($topic);
 		}
 		$this->load->view('admin', $data);
+
 	}
 
 	public function get_post_data()

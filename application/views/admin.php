@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,6 +25,37 @@
   .delete_btn {
     width: 100%;
   }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .modal {
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .modal__bg {
+    background: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+  }
+
+  .modal__content {
+    background: #fff;
+    left: 50%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+  }
 </style>
 
 <body>
@@ -31,17 +63,30 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-12">
-          <h1 class="m-0 text-dark">管理画面</h1>
+          <div style="display:flex">
+            <img src="./img/logo.png" alt="KGBanロゴ" width="210px" height="150px;">
+            <button class="btn btn-danger" style="margin-left: auto; height: 40px;">ログアウト</button>
+          </div>
           <div style="display:flex;">
             <div class="form-group" style="margin: 30px;">
               <select name="bbsName" id="topic" class="form-control" style="width: 400px;">
                 <option value="#">トピックを選択してください。</option>
-                <?php foreach ($clean_topics as $clean_topic): ?>
+                <?php foreach ($clean_topics as $clean_topic) : ?>
                   <option value="<?= $clean_topic['id']; ?>"><?= $clean_topic['name']; ?></option>
                 <?php endforeach; ?>
               </select>
             </div>
             <button type="button" id="topic_btn" class="btn btn-primary" style="width:100px; height: 40px; margin-top: 28px;">表示</button>
+            <button type="button" id="topic_delete" class="btn btn-success" style="margin-left: 30px; height: 40px; margin-top: 28px;">トピック削除</button>
+            <div class="modal js-modal">
+              <div class="modal__bg js-modal-close"></div>
+              <div class="modal__content">
+                <p>aaa</p>
+                <a class="js-modal-close" href="">閉じる</a>
+              </div>
+              <!--modal__inner-->
+            </div>
+            <!--modal-->
           </div>
           <table class="table table-striped table-bordered" id="lingTable">
             <thead style="text-align: center">
@@ -76,6 +121,18 @@
         "language": {
           "url": "//cdn.datatables.net/plug-ins/3cfcc339e89/i18n/Japanese.json"
         },
+      });
+    });
+
+    //トピック削除用モーダル
+    $(function() {
+      $('#topic_delete').on('click', function(){
+        $('.js-modal').fadeIn();
+        return false;
+      })
+      $('.js-modal-close').on('click', function() {
+        $('.js-modal').fadeOut();
+        return false;
       });
     });
 
