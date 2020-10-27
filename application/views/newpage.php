@@ -6,7 +6,7 @@ if(!empty($_POST['btn_submit'])){?>
     <div class="newpost_box">
         <h3 class="newpost_top">トピック作成完了</h3> 
         <div style="text-align:center">
-        <a href="/Horii_Tagashira_Matsuda-master/"><button class="sub-button"type="button">戻る</button></a>
+        <a href="../"><button class="sub-button"type="button">戻る</button></a>
         </div>
 <?php }?>
 
@@ -23,7 +23,7 @@ if(!empty($_POST['btn_submit'])){?>
     <!-- CSS -->
         <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
         <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
-        <link href="/Horii_Tagashira_Matsuda-master/css/style.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
 
     </head>
 
@@ -42,7 +42,7 @@ if(!empty($_POST['btn_submit'])){?>
                         <dd><textarea type="text" name="summary"></textarea></dd>
                     </dl>
                     <div class="btn">
-                        <a href="/Horii_Tagashira_Matsuda-master/"><button class="sub-button"type="button">戻る</button></a>
+                        <a href="../"><button class="sub-button"type="button">戻る</button></a>
                         <button type="submit" name="btn_submit" value="投稿">投稿</button>
                     </div>
             </div>
