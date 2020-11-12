@@ -13,6 +13,7 @@ class Bbs extends CI_Controller {
     }
 	public function index()
 	{
+		
 		$data['topic']=$this->Bbs_model->topic ();
 		$this->load->view('index',$data);
 	}
