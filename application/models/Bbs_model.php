@@ -23,8 +23,8 @@ class Bbs_model extends CI_Model {
         $query=$this->db->get_where('topics',array('id'=>$id));
         $data=$query->result('array');
         foreach ($data as $t){
-           $summary[]=$t['name'];
-           $summary[]=$t['summary'];  
+        $summary[]=$t['name'];
+        $summary[]=$t['summary'];  
             
     }
     return $summary;

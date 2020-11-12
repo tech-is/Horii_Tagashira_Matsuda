@@ -42,4 +42,10 @@ class Admin extends CI_Controller {
 		$id = $this->input->post('post_id', true)? : null;
 		$this->admin_model->post_delete($id);
 	}
+
+	public function topic_delete()
+	{
+		$id = $this->input->post('topic_id', true)? : null;
+		$this->admin_model->topic_delete($id);
+	}
 }

@@ -33,4 +33,11 @@ class Admin_model extends CI_Model {
         $this->db->where('id', $id);
         $this->db->update('bbs', $data);
     }
+
+    public function topic_delete($id)
+    {
+        $change_data = ['delete_flag' => 1];
+        $this->db->where('id', $id);
+        $this->db->update('topics', $change_data);
+    }
 }

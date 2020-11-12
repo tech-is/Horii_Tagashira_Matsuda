@@ -8,54 +8,14 @@
   <title>K-G-Ban ADMIN</title>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="./AdminLTE/plugins/fontawesome-free/css/all.min.css">
-  <link rel="stylesheet" href="./AdminLTE/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../AdminLTE/plugins/fontawesome-free/css/all.min.css">
+  <!-- <link rel="stylesheet" href="./AdminLTE/dist/css/adminlte.min.css"> -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="../css/admin.css">
 </head>
 
 <style>
-  .box-read {
-    width: 300px;
-    max-width: 300px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .delete_btn {
-    width: 100%;
-  }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  .modal {
-    display: none;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-
-  .modal__bg {
-    background: rgba(0, 0, 0, 0.8);
-    height: 100vh;
-    position: absolute;
-    width: 100%;
-  }
-
-  .modal__content {
-    background: #fff;
-    left: 50%;
-    padding: 40px;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%;
-  }
+  
 </style>
 
 <body>
@@ -64,29 +24,20 @@
       <div class="row mb-2">
         <div class="col-sm-12">
           <div style="display:flex">
-            <img src="./img/logo.png" alt="KGBanロゴ" width="210px" height="150px;">
-            <button class="btn btn-danger" style="margin-left: auto; height: 40px;">ログアウト</button>
+            <img src="/team_/img/logo.png" alt="KGBanロゴ" width="210px" height="150px;">
+            <button class="btn btn-danger logout_btn" style="margin-left: auto; height: 40px;">ログアウト</button>
           </div>
           <div style="display:flex;">
             <div class="form-group" style="margin: 30px;">
               <select name="bbsName" id="topic" class="form-control" style="width: 400px;">
                 <option value="#">トピックを選択してください。</option>
                 <?php foreach ($clean_topics as $clean_topic) : ?>
-                  <option value="<?= $clean_topic['id']; ?>"><?= $clean_topic['name']; ?></option>
+                  <option id="topic<?= $clean_topic['id']; ?>" value="<?= $clean_topic['id']; ?>"><?= $clean_topic['name']; ?></option>
                 <?php endforeach; ?>
               </select>
             </div>
             <button type="button" id="topic_btn" class="btn btn-primary" style="width:100px; height: 40px; margin-top: 28px;">表示</button>
             <button type="button" id="topic_delete" class="btn btn-success" style="margin-left: 30px; height: 40px; margin-top: 28px;">トピック削除</button>
-            <div class="modal js-modal">
-              <div class="modal__bg js-modal-close"></div>
-              <div class="modal__content">
-                <p>aaa</p>
-                <a class="js-modal-close" href="">閉じる</a>
-              </div>
-              <!--modal__inner-->
-            </div>
-            <!--modal-->
           </div>
           <table class="table table-striped table-bordered" id="lingTable">
             <thead style="text-align: center">
@@ -106,9 +57,10 @@
     </div>
   </div>
 
-  <script src="./AdminLTE/plugins/jquery/jquery.min.js"></script>
-  <script src="./AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="./AdminLTE/dist/js/adminlte.min.js"></script>
+  <script src="../AdminLTE/plugins/jquery/jquery.min.js"></script>
+  <script src="../AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="./AdminLTE/dist/js/adminlte.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
@@ -119,24 +71,45 @@
     $(document).ready(function() {
       $('#lingTable').DataTable({
         "language": {
-          "url": "//cdn.datatables.net/plug-ins/3cfcc339e89/i18n/Japanese.json"
+          "url": "http://cdn.datatables.net/plug-ins/3cfcc339e89/i18n/Japanese.json"
         },
       });
     });
 
-    //トピック削除用モーダル
-    $(function() {
+    //トピック削除機能
+    $(function(){
       $('#topic_delete').on('click', function(){
-        $('.js-modal').fadeIn();
-        return false;
+        var topic_id = document.getElementById('topic').value;
+        var topic_name = document.getElementById('topic' + topic_id).innerHTML;
+        swal({
+          title: topic_name,
+          text: "このトピックを削除してもよろしいですか？",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        })
+        .then((willDelete) => {
+          if (willDelete) {
+            $.ajax({
+                url: './topic_delete',
+                type: 'POST',
+                data: {
+                  'topic_id': topic_id
+                }
+              })
+              .done((data) => {
+                console.log(data);
+              })
+            $('#topic' + topic_id).hide();
+            swal("投稿を削除しました。", "", "success");
+          } else {
+            swal("キャンセルしました。", "", "success");
+          }
+        });
       })
-      $('.js-modal-close').on('click', function() {
-        $('.js-modal').fadeOut();
-        return false;
-      });
-    });
+    })
 
-    //投稿削除
+    //投稿投稿削除
     function post_delete(id) {
       swal({
           title: "削除してもよろしいですか？",
@@ -147,7 +120,7 @@
         .then((willDelete) => {
           if (willDelete) {
             $.ajax({
-                url: './Admin/post_delete',
+                url: './post_delete',
                 type: 'POST',
                 data: {
                   'post_id': id
@@ -156,7 +129,7 @@
               .done((data) => {
                 console.log(data);
               })
-            $('#' + id).hide();
+            
             swal("投稿を削除しました。", "", "success");
           } else {
             swal("キャンセルしました。", "", "success");
@@ -168,7 +141,7 @@
     $(function() {
       $('#topic_btn').on('click', function() {
         $.ajax({
-            url: './Admin/get_post_data',
+            url: './get_post_data',
             type: 'POST',
             data: {
               'topic_id': $('#topic').val()
