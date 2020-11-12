@@ -64,7 +64,7 @@
       <div class="row mb-2">
         <div class="col-sm-12">
           <div style="display:flex">
-            <img src="./img/logo.png" alt="KGBanロゴ" width="210px" height="150px;">
+            <img src="./img/logo_1.png" alt="KGBanロゴ" width="210px" height="150px;">
             <button class="btn btn-danger" style="margin-left: auto; height: 40px;">ログアウト</button>
           </div>
           <div style="display:flex;">
