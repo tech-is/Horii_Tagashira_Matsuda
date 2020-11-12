@@ -1,3 +1,8 @@
+<?php 
+$i=count($topic);
+
+
+?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -10,6 +15,9 @@
         <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
         <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
         <link href="../css/style.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../jquery.simplePagination.js"></script> 
+        <link rel= "stylesheet" href="../css/simplePagination.css">
     </head>
 
     <body>
@@ -18,11 +26,22 @@
                 <div class="sub_box">
                 <h3 class="sub-title">けいじばん</h3>
                 <ul class="sub-menu">
+                <div class="selection" id="page-1">
                     <?php
+                    $j=0;
                     foreach ($topic as $t2 => $t3){
-                        echo '<li><a href="topic?id='.$t2.'">'.$t3.'</a></li>';
+                        if($j%5==0 && $j!=0){
+                            echo '</div>';
+                            echo '<div class="selection" id="page-'.($j/5+1).'">';
+                        }
+                        echo '<li><a href="topic?id='.$t2.'">'.$t3.'</a></li>';                        
+                        
+                        $j++;
                     }?>
-                </ul>
+                    </div> 
+                    <div class="pagination-holder clearfix">
+            <div id="light-pagination" class="pagination"></div>
+                </div>  
                 <a href="newpage"><button class="sub-button"type="button">＋　新規作成</button></a>
                 </div>
             </aside>
@@ -35,7 +54,7 @@
                                 <img src="/team2/Horii_Tagashira_Matsuda/img/ic1.jpeg" alt="サムネイル画像">
                             </figure>
                             <div class="top_content">
-                                <p class="text_date"><time datetime="2018-08-03">XXXX年XX月XX日</time></p>
+                                <p class="text_date"><?=$summary[2]?></p>
                                 <h2><a class="top_title" href="#"><?=$summary[0]?></a></h2>
                                 
                             </div>
@@ -62,28 +81,28 @@
                         </form>
                     </div>
                 </div>
+                
                 <?php
                     if(!empty($post)){
-                    foreach ($post as $p2 => $p3){?>
+                        
+                    foreach ($post as $p2){
+                        ?>
                 <div class="article wrapper post_box">
                     <figure class="post_figure">
                         <img src="/team2/Horii_Tagashira_Matsuda/img/ic1.jpeg" alt="サムネイル画像">
                     </figure>
 
                     <div class="text_content">
-                        <p class="text_date"><time datetime="">5分前</time></p>
-                        <p class="top_name">投稿者：<?=$p2?></p>
-                        <p class="text_p"><?=$p3?></p>
-                        <div class="edit_text">
-                            <a href="#">編集</a>
-                            <a href="#">削除</a>
-                        </div>    
+                        <p class="text_date"><?=$p2['date']?></p>
+                        <p class="top_name">投稿者：<?=$p2['name']?></p>
+                        <p class="text_p"><?=$p2['text']?></p>
+                        
                     </div>
                 </div>
                 <?php }
-                    }?>
-                
-                
+                    }
+                ?>
+ 
     
             </article>
 
@@ -92,5 +111,27 @@
                     <p><small>&copy; 2020　チーム開発</small></p>
                 </div>
             </footer>-->
+            <script type="text/javascript">
+    
+    $(function () {
+        $(".pagination").pagination({
+        items: <?php echo $i/5?>,
+        displayedPages: 5,
+        prevText:"前へ",
+        nextText:"次へ",
+        cssStyle: 'light-theme',
+        onPageClick: function (currentPageNumber) {
+            showPage(currentPageNumber);
+            }
+        })
+    });
+    function showPage(currentPageNumber) {
+    var page = "#page-" + currentPageNumber;
+    $('.selection').hide();
+    $(page).show();
+    }
+
+   
+</script>
     </body>
 </html>
