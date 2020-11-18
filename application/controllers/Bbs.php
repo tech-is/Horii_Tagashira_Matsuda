@@ -28,12 +28,12 @@ class Bbs extends CI_Controller {
 	public function newpage()
 	{
 		$btn=$this->input->post('btn_submit');
-		$name=$this->input->post('name');
-		$summary=$this->input->post('summary');
-		$data=array($name,$summary);
 		
 		if(!empty($btn)){
-			
+			$name=$this->input->post('name');
+			$summary=$this->input->post('summary');
+			$imgpass=$_FILES["img"]["name"];
+			$data=array($name,$summary,$imgpass);
 			$this->Bbs_model->newtopic($data);
 			
 		}	
@@ -43,6 +43,7 @@ class Bbs extends CI_Controller {
 	public function topic()
 	{
 		$data['id']=$_GET['id'];
+		$data['postpage']=$_GET['postpage'];
 		$btn=$this->input->post('btn_submit');
 		$name=$this->input->post('name');
 		$text=$this->input->post('text');

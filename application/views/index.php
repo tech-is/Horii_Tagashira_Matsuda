@@ -34,7 +34,7 @@ $i=count($topic);
                             echo '</div>';
                             echo '<div class="selection" id="page-'.($j/5+1).'">';
                         }
-                        echo '<li><a href="Bbs/topic?id='.$t2.'">'.$t3.'</a></li>';                        
+                        echo '<li><a href="Bbs/topic?id='.$t2.'&postpage=1">'.$t3.'</a></li>';                        
                         
                         $j++;
                     }?>
@@ -43,6 +43,7 @@ $i=count($topic);
             <div id="light-pagination" class="pagination"></div>
                 </div>  
                     <a href="Bbs/newpage"><button class="sub-button"type="button">＋　新規作成</button></a>
+                    <a href="Admin" style="color:white"><button type="button">管理者</a>
                 </div> 
                 
                 
@@ -57,26 +58,25 @@ $i=count($topic);
                     <p><small>&copy; 2020　チーム開発</small></p>
                 </div>
             </footer>-->
-    <script type="text/javascript">
+        <script type="text/javascript">
     
-    $(function () {
-        $(".pagination").pagination({
-        items: <?php echo $i/5?>,
-        displayedPages: 5,
-        prevText:"前へ",
-        nextText:"次へ",
-        cssStyle: 'light-theme',
-        onPageClick: function (currentPageNumber) {
-            showPage(currentPageNumber);
-            }
-        })
-    });
-    function showPage(currentPageNumber) {
-    var page = "#page-" + currentPageNumber;
-    $('.selection').hide();
-    $(page).show();
-    }
-
-</script>
+            $(function () {
+                $(".pagination").pagination({
+                items: <?php echo $i/5?>,
+                displayedPages: 5,
+                prevText:"前へ",
+                nextText:"次へ",
+                cssStyle: 'light-theme',
+                onPageClick: function (currentPageNumber) {
+                    showPage(currentPageNumber);
+                    }
+                })
+            });
+            function showPage(currentPageNumber) {
+                var page = "#page-" + currentPageNumber;
+                $('.selection').hide();
+                $(page).show();
+                }
+         </script>
     </body>
 </html>

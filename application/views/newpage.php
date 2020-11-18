@@ -1,6 +1,8 @@
 <?php
-
-if(!empty($_POST['btn_submit'])){?>
+if(!empty($_POST['btn_submit'])){
+    define( "FILE_DIR", "./img/");
+move_uploaded_file( $_FILES['img']['tmp_name'], FILE_DIR.$_FILES['img']['name']);
+?>
 
     <div class="article wrapper new_new">
     <div class="newpost_box">
@@ -34,13 +36,17 @@ if(!empty($_POST['btn_submit'])){?>
         <div class="article wrapper new_new">
             <div class="newpost_box">
                 <h3 class="newpost_top">新規トピック作成</h3>
-                    <form class="newpost" method="POST">
+                    <form class="newpost" method="POST"enctype="multipart/form-data">
                     <dl>
                         <dt>タイトル</dt>
                         <dd><input type="text" name="name"></input></dd>
                         <dt>内容</dt>
                         <dd><textarea type="text" name="summary"></textarea></dd>
                     </dl>
+                    <div class="form-check">
+                    <label>画像ファイルの添付</label><br></br>
+	                <input type="file" name="img">
+    </div>
                     <div class="btn">
                         <a href="../"><button class="sub-button"type="button">戻る</button></a>
                         <button type="submit" name="btn_submit" value="投稿">投稿</button>
