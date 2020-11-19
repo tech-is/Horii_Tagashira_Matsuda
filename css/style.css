@@ -131,6 +131,8 @@ article {
 }
 
 .top_box {
+    display: flex;
+    flex-direction: column;
     padding: 0.5em 1em;
     margin: 2em 2em;
     margin-right: 0em;
@@ -169,6 +171,7 @@ article {
 .top_text{
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     padding: 10px;
 }
 
@@ -310,64 +313,18 @@ aside p {
     text-align: center;
 }
 
-nav.navi *, nav.navi *:after, nav.navi *:before {
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
-}
-nav.navi a {
-	text-decoration: none;
-}
-nav.navi {
-	margin: 2em 0;
-	text-align: center;
-}
-.navi .pagination {
-	display: inline-block;
-	margin-top: 1em;
-	padding: 0 0.5em;
-}
-.navi .pagenum {
-	font-size: 1em;
-	line-height: 30px;
-	display: block;
-	float: left;
-	transition: 400ms ease;
-	letter-spacing: 0.1em;
-	color: #37474F;
-	border-radius: 50%;
-	width: 30px;
-	height: 30px;
-	margin: auto;
-}
-.navi .pagenum:hover,
-.navi .pagenum.current {
-	font-weight: bold;
-	color: #37474F;
-	background-color: #a5ce8e;
-	border-radius: 50%;
-}
-
-.navi .pagenum.prev{
-    margin: auto 15px;
-    text-align: center;
-}
-
-.navi .pagenum.prev:hover,
-.navi .pagenum.next:hover {
-	color: #a5ce8e;
-	background-color: transparent;
-	border-radius: 50%;
-}
 
 /*text*/
 
 .textarea_box {
-    position: flex;
+    display: flex;
     flex-direction: column;
     padding: 0.5em 1em;
-    margin: 0.5em 2em;
+    padding-top: 20px;
+    margin: 2em 2em;
+    margin-top: 0px;
     margin-right: 0em;
-    color: #01433f;
+    color:  #01433f;;
     background: #ffffff;/*背景色*/
 }
 
@@ -556,7 +513,9 @@ form dl dd{
         max-width: fit-content;
         margin: 20px;
     }
-    article {
+    article { 
+        display: flex;
+        flex-direction: column;
         margin-top:20px;
         width: 100%;
     }
@@ -575,11 +534,7 @@ form dl dd{
     }
     .textarea_box {
         margin: auto;
-        max-width:inherit;
-    }
-    
-    .textarea_box {
-        margin: auto;
+        padding-top: 20px;
         max-width:inherit;
     }
     .textarea_tt {
