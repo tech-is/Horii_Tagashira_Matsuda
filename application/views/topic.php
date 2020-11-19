@@ -67,10 +67,9 @@ $i = count($topic);
                 <div class="top_text">
                     <p><?= $summary[1] ?></p>
                 </div>
-            </div>
 
-            <div class="article wrapper textarea_box">
-                <div class="textarea_tt">
+                <div class="article wrapper textarea_box">
+                    <div class="textarea_tt">
                     <form method="POST" action="topic?id=<?= $id ?>">
                         <textarea type="text" name="name" rows="1" 　id="name" placeholder="投稿名"></textarea>
                         <div class="textarea_bb">
