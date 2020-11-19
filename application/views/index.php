@@ -33,23 +33,6 @@ $i=count($topic);
                     <?php
                     $j=0;
                     foreach ($topic as $t2 => $t3){
-<<<<<<< HEAD
-                        echo '<li><a href=".Bbs/topic?id='.$t2.'">'.$t3.'</a></li>';
-                    }?>
-                </ul>
-                
-                <nav class="navi">
-                    <div class="pagination">
-                        <a class="pagenum prev" href="#">prev</a>
-                        <span aria-current="page" class="pagenum current">1</span>
-                        <a class="pagenum" href="#">2</a>
-                        <a class="pagenum" href="#">3</a>
-                        <a class="pagenum" href="#">4</a>
-                        <a class="pagenum" href="#">5</a>
-                        <a class="pagenum next" href="#">next</a>
-                    </div>
-                </nav>
-=======
                         if($j%5==0 && $j!=0){
                             echo '</div>';
                             echo '<div class="selection" id="page-'.($j/5+1).'">';
@@ -59,10 +42,9 @@ $i=count($topic);
                         $j++;
                     }?>
                     </div> 
-                    <div class="pagination-holder clearfix">
-            <div id="light-pagination" class="pagination"></div>
+                <div class="pagination-holder clearfix">
+                <div id="light-pagination" class="pagination"></div>
                 </div>  
->>>>>>> 5c7a03baca88951120e227c0ecaf85f44240b630
                     <a href="Bbs/newpage"><button class="sub-button"type="button">＋　新規作成</button></a>
                 </div> 
                 
@@ -84,9 +66,9 @@ $i=count($topic);
         $(".pagination").pagination({
         items: <?php echo $i/5?>,
         displayedPages: 5,
-        prevText:"前へ",
-        nextText:"次へ",
-        cssStyle: 'light-theme',
+        prevText:"prev",
+        nextText:"next",
+        cssStyle: 'compact-theme',
         onPageClick: function (currentPageNumber) {
             showPage(currentPageNumber);
             }
