@@ -26,6 +26,7 @@ class Bbs_model extends CI_Model {
            $summary[]=$t['name'];
            $summary[]=$t['summary'];  
            $summary[]=$t['date'];
+           $summary[]=$t['icon'];
             
     }
     return $summary;
@@ -33,7 +34,7 @@ class Bbs_model extends CI_Model {
     public function newtopic($data)
     {
         $today=date("Y-m-d H:i:s");
-        return $this->db->query("INSERT INTO topics (name,summary,icon,date) VALUES ('$data[0]','$data[1]','NULL','$today')");
+        return $this->db->query("INSERT INTO topics (name,summary,icon,date) VALUES ('$data[0]','$data[1]','$data[2]','$today')");
     }
     public function post($id)
     {
@@ -51,6 +52,11 @@ class Bbs_model extends CI_Model {
                 return $post; 
     }
     public function newpost($data1)
+    {
+        $today=date("Y-m-d H:i:s");
+        return $this->db->query("INSERT INTO post (topic_id,name,text,img,delete_pass,date) VALUES ('$data1[0]','$data1[1]','$data1[2]','','NULL','$today')");
+    }
+    public function postpagination()
     {
         $today=date("Y-m-d H:i:s");
         return $this->db->query("INSERT INTO post (topic_id,name,text,img,delete_pass,date) VALUES ('$data1[0]','$data1[1]','$data1[2]','','NULL','$today')");
