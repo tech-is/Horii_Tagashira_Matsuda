@@ -54,7 +54,6 @@ $i = count($topic);
             </aside>
 
             <article>
->>>>>>> 507ab5f29930931c860b3e27879c12003f99d798
 
         </aside>
 
