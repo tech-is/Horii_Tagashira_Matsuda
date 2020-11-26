@@ -30,25 +30,31 @@ $i = count($topic);
                     <img src="./img/logo-02.png" width="80%" height="80%">
                 </div>
                 <ul class="sub-menu">
-                    <div class="selection" id="page-1">
-                        <?php
-                        $j = 0;
-                        foreach ($topic as $t2 => $t3) {
-                            if ($j % 5 == 0 && $j != 0) {
-                                echo '</div>';
-                                echo '<div class="selection" id="page-' . ($j / 5 + 1) . '">';
-                            }
-                            echo '<li><a href="Bbs/topic?id=' . $t2 . '">' . $t3 . '</a></li>';
+                <div class="selection" id="page-1">
+                    <?php
+                    $j=0;
+                    foreach ($topic as $t2 => $t3){
+                        if($j%5==0 && $j!=0){
+                            echo '</div>';
+                            echo '<div class="selection" id="page-'.($j/5+1).'">';
+                        }
+                        echo '<li><a href="Bbs/topic?id='.$t2.'&postpage=1">'.$t3.'</a></li>';                                     
+                        
+                        $j++;
+                    }?>
+                    </div> 
+                <div class="pagination-holder clearfix">
+                <div id="light-pagination" class="pagination"></div>
+                </div>  
+                    <a href="Bbs/newpage"><button class="sub-button"type="button">＋　新規作成</button></a>
+                    <a href="Admin" style="color:white"><button type="button">管理者</a>
+                </div> 
+                
+                
+            </aside>
 
-                            $j++;
-                        } ?>
-                    </div>
-                    <div class="pagination-holder clearfix">
-                        <div id="light-pagination" class="pagination"></div>
-                    </div>
-                    <a href="Bbs/newpage"><button class="sub-button" type="button">＋　新規作成</button></a>
-            </div>
-
+            <article>
+>>>>>>> 507ab5f29930931c860b3e27879c12003f99d798
 
         </aside>
 
