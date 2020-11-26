@@ -1,30 +1,31 @@
-<?php 
-$i=count($topic);
+<?php
+$i = count($topic);
 
 ?>
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <title>BBS</title>
-        <link rel="icon" type="./image/png" href=*>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <meta charset="utf-8">
+    <title>BBS</title>
+    <link rel="icon" type="./image/png" href=*>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSS -->
-        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
-        <link href="./css/style.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="./jquery.simplePagination.js"></script> 
-        <link rel= "stylesheet" href="./css/simplePagination.css">
-        
-    </head>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./jquery.simplePagination.js"></script>
+    <link rel="stylesheet" href="./css/simplePagination.css">
 
-    <body>
-        <div class="article wrapper">
-            <aside>
-                <div class="sub_box">
+</head>
+
+<body>
+    <div class="article wrapper">
+        <aside>
+            <div class="sub_box">
                 <div class="sub_logo">
                     <img src="./img/logo-02.png" width="80%" height="80%">
                 </div>
@@ -51,36 +52,40 @@ $i=count($topic);
                 
                 
             </aside>
-                      
+
             <article>
 
-            </article>
+        </aside>
 
-            <!--<footer>
+        <article>
+
+        </article>
+
+        <!--<footer>
                 <div class="footer wrapper">
                     <p><small>&copy; 2020　チーム開発</small></p>
                 </div>
             </footer>-->
-    <script type="text/javascript">
-    
-    $(function () {
-        $(".pagination").pagination({
-        items: <?php echo $i/5?>,
-        displayedPages: 5,
-        prevText:"prev",
-        nextText:"next",
-        cssStyle: 'compact-theme',
-        onPageClick: function (currentPageNumber) {
-            showPage(currentPageNumber);
-            }
-        })
-    });
-    function showPage(currentPageNumber) {
-    var page = "#page-" + currentPageNumber;
-    $('.selection').hide();
-    $(page).show();
-    }
+        <script type="text/javascript">
+            $(function() {
+                $(".pagination").pagination({
+                    items: <?php echo $i / 5 ?>,
+                    displayedPages: 5,
+                    prevText: "前へ",
+                    nextText: "次へ",
+                    cssStyle: 'light-theme',
+                    onPageClick: function(currentPageNumber) {
+                        showPage(currentPageNumber);
+                    }
+                })
+            });
 
-</script>
-    </body>
+            function showPage(currentPageNumber) {
+                var page = "#page-" + currentPageNumber;
+                $('.selection').hide();
+                $(page).show();
+            }
+        </script>
+</body>
+
 </html>
